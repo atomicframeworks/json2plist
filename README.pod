@@ -4,8 +4,12 @@
 <br />
 <br />
 1. Include json2plist.js in your project
+<br />
+<br />
 
 2. Use json2plist(theVar) to convert from JSON to plist friendly notation.
+<br />
+<br />
 
 3. Then do what you want with the data!
 
