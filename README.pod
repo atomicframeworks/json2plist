@@ -1,0 +1,12 @@
+=begin html
+
+<h1> json2plist.js - Convert JavaScript objects to plists </h1>
+<br />
+<br />
+1. Include json2plist.js in your project
+
+2. Use json2plist(theVar) to convert from JSON to plist friendly notation.
+
+3. Then do what you want with the data!
+
+=end html

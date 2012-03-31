@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<!-- Start Head -->
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+		<title>json2plist.js</title>
+
+		<!-- jQuery.js -->	
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+		<!-- json2plist.js -->	
+		<script type="text/javascript" src="json2plist.js"></script>
+		<script type="text/javascript">
+		// Our demo object 
+			var demo = {
+				"object":{
+					"booleanTrue":true,
+					"booleanFalse":false,
+					"string":"contents",
+					"int":12345,
+					"float":0.54321,
+					"array":[1,2,3,{
+						"objectInArray":"is fine",
+						"booleanTrue":true,
+						"booleanFalse":false,
+						"int":12345,
+						"float":0.54321
+						}
+					],
+					"objectInObject": {
+						"booleanTrue":true,
+						"booleanFalse":false,
+						"string":"contents",
+						"int":12345,
+						"float":0.54321
+					}
+				}
+			}
+		</script>
+		
+		<script type="text/javascript">
+			// On ready (json2plist) convert the demo var and send to textarea
+			$(document).ready( function () {
+				var theData = $('#start').val();
+				var thePlist = json2plist(demo);
+				$('#end').val(thePlist);
+			})
+		</script>
+		<style>
+			html{
+				min-width:800px;
+			}
+			body{
+				text-align:center;
+				width:100%;
+			}
+			#end{
+				padding:15px;
+			}
+			#start{
+				padding:15px;
+			}
+			.box{
+				width:49%;
+				float:left;
+				text-align:center;
+			}
+			.box span{
+				font-weight:bold;
+				font-size:16px;
+			}
+		</style>
+	</head>
+	<!-- End Head -->
+	<!-- Start Body -->
+	<body>
+		<!-- Start Header & Logo -->
+		<h1>
+		json2plist.js
+		</h1>
+			<div class="box">
+				<span>JSON:  </span>
+				<br/>
+				<textarea id="start" rows="33" cols="50"> var demo = {
+					"arrayInObject":{
+							"booleanTrue":true,
+							"booleanFalse":false,
+							"string":"contents",
+							"int":12345,
+							"float":0.54321,
+							"array":[1,2,3,{
+								"objectInArray":"is fine",
+								"booleanTrue":true,
+								"booleanFalse":false,
+								"int":12345,
+								"float":0.54321
+								}
+							],
+							"objectInObject": {
+								"booleanTrue":true,
+								"booleanFalse":false,
+								"string":"contents",
+								"int":12345,
+								"float":0.54321
+							}
+						}
+					}
+				</textarea>
+			</div>
+			
+			<div class="box">
+				<span>PLIST:  </span>
+				<br/>
+				<textarea id="end" rows="33" cols="50">
+				</textarea>
+			</div>
+		</div>
+	</body>
+	<!-- End Body -->
+</html>
